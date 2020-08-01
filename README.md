@@ -45,3 +45,14 @@ end
 
 main()
 ```
+
+## Test Result
+
+```bash
+Enter a number [1-45]:
+40
+
+fibonacci(40) = 102334155
+
+Used time: 0.53 seconds
+```
