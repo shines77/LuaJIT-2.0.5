@@ -17,6 +17,8 @@ cd test
 .\fibonacci_luajit.bat
 ```
 
+## fibonacci.lua
+
 Source code of `fibonacci.lua`:
 
 ```lua
