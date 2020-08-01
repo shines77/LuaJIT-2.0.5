@@ -8,8 +8,38 @@ LuaJIT is Copyright (C) 2005-2017 Mike Pall.
 LuaJIT is free software, released under the MIT license.
 See full Copyright Notice in the COPYRIGHT file or in luajit.h.
 
-Documentation for LuaJIT is available in HTML format.
-Please point your favorite browser to:
+## Fibonacci Test
 
- doc/luajit.html
+Run the `fibonacci.lua` use `luajit` on Windows:
 
+```bash
+cd test
+.\fibonacci_luajit.bat
+```
+
+Source code of `fibonacci.lua`:
+
+```lua
+function fibonacci(n)
+  if n >= 3 then
+  	return fibonacci(n - 2) + fibonacci(n - 1)
+  else
+    return 1
+  end
+end
+
+function main()
+	print("Enter a number [1-45]: ")
+	local n = io.read("*number")
+
+	print("");
+	local startTime = os.clock()
+	local fib_n = fibonacci(n)
+	local endTime = os.clock()
+
+	print("fibonacci(40) = "..fib_n.."\n")
+	print("Used time: "..(endTime - startTime).." seconds")
+end
+
+main()
+```
