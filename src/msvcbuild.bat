@@ -14,6 +14,7 @@
 @if not defined INCLUDE goto :FAIL
 
 @setlocal
+@set MSVC_ARCH=%Platform% %CommandPromptType% %PreferredToolArchitecture%
 @set LJCOMPILE=cl /nologo /c /O2 /W3 /D_CRT_SECURE_NO_DEPRECATE /D_CRT_STDIO_INLINE=__declspec(dllexport)__inline
 @set LJLINK=link /nologo
 @set LJMT=mt /nologo
@@ -101,7 +102,7 @@ if exist luajit.exe.manifest^
 @del host\buildvm_arch.h
 @del lj_bcdef.h lj_ffdef.h lj_libdef.h lj_recdef.h lj_folddef.h
 @echo.
-@echo === Successfully built LuaJIT for Windows/%LJARCH% ===
+@echo === Successfully built LuaJIT for Windows/%MSVC_ARCH% ===
 
 @goto :END
 :BAD
